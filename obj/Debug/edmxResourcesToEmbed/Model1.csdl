@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="authuserModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="log_user">
+    <Key>
+      <PropertyRef Name="log_id" />
+    </Key>
+    <Property Name="log_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="reg_user">
+    <Key>
+      <PropertyRef Name="reg_id" />
+    </Key>
+    <Property Name="reg_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="reg_uname" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="reg_pass" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="reg_cpass" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email_id" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="mobile_no" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
+    <Property Name="reg_date" Type="DateTime" Precision="3" />
+    <Property Name="role_id" Type="Decimal" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="isvalid" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="authuserEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="log_user" EntityType="Self.log_user" />
+    <EntitySet Name="reg_user" EntityType="Self.reg_user" />
+    <EntitySet Name="customers" EntityType="authuserModel.customer" />
+    <EntitySet Name="cust_mor" EntityType="authuserModel.cust_mor" />
+    <EntitySet Name="transections" EntityType="authuserModel.transection" />
+    <AssociationSet Name="FK_cust_mor_ToTable" Association="authuserModel.FK_cust_mor_ToTable">
+      <End Role="customer" EntitySet="customers" />
+      <End Role="cust_mor" EntitySet="cust_mor" />
+    </AssociationSet>
+    <EntitySet Name="accounts" EntityType="authuserModel.account" />
+    <AssociationSet Name="FK_transection_ToTable" Association="authuserModel.FK_transection_ToTable">
+      <End Role="customer" EntitySet="customers" />
+      <End Role="transection" EntitySet="transections" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="c_id" />
+    </Key>
+    <Property Name="c_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="c_fname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="c_mname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="c_lname" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="city" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="email_id" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="mobile_no" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+    <Property Name="cphoto_path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="mphoto_path" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="create_date" Type="DateTime" Precision="3" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="updated_date" Type="DateTime" Precision="3" />
+    <Property Name="interest_rate" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="credit_limit" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <NavigationProperty Name="cust_mor" Relationship="authuserModel.FK_cust_mor_ToTable" FromRole="customer" ToRole="cust_mor" />
+    <NavigationProperty Name="transections" Relationship="authuserModel.FK_transection_ToTable" FromRole="customer" ToRole="transection" />
+  </EntityType>
+  <EntityType Name="cust_mor">
+    <Key>
+      <PropertyRef Name="cust_mor_id" />
+    </Key>
+    <Property Name="cust_mor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="c_id" Type="Int32" Nullable="false" />
+    <Property Name="item_type" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="item_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="gross_weight" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="rate" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="amount" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <NavigationProperty Name="customer" Relationship="authuserModel.FK_cust_mor_ToTable" FromRole="cust_mor" ToRole="customer" />
+  </EntityType>
+  <EntityType Name="transection">
+    <Key>
+      <PropertyRef Name="t_id" />
+    </Key>
+    <Property Name="t_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="t_type" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="t_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="t_amount" Type="Decimal" Nullable="false" Precision="9" Scale="2" />
+    <Property Name="t_remark" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="c_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="customer" Relationship="authuserModel.FK_transection_ToTable" FromRole="transection" ToRole="customer" />
+  </EntityType>
+  <Association Name="FK_cust_mor_ToTable">
+    <End Type="authuserModel.customer" Role="customer" Multiplicity="1" />
+    <End Type="authuserModel.cust_mor" Role="cust_mor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="cust_mor">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="account">
+    <Key>
+      <PropertyRef Name="acc_id" />
+    </Key>
+    <Property Name="acc_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="acc_no" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="acc_bal" Type="Int32" Nullable="false" />
+    <Property Name="acc_date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_transection_ToTable">
+    <End Type="authuserModel.customer" Role="customer" Multiplicity="1" />
+    <End Type="authuserModel.transection" Role="transection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="c_id" />
+      </Principal>
+      <Dependent Role="transection">
+        <PropertyRef Name="c_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

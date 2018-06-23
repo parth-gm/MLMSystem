@@ -1,0 +1,13 @@
+J:\sem5\stable_v0\authwebpart\bin\authwebpart.dll.config
+J:\sem5\stable_v0\authwebpart\bin\authwebpart.dll
+J:\sem5\stable_v0\authwebpart\bin\authwebpart.pdb
+J:\sem5\stable_v0\authwebpart\bin\AjaxControlToolkit.dll
+J:\sem5\stable_v0\authwebpart\bin\EntityFramework.dll
+J:\sem5\stable_v0\authwebpart\bin\EntityFramework.SqlServer.dll
+J:\sem5\stable_v0\authwebpart\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+J:\sem5\stable_v0\authwebpart\bin\EntityFramework.xml
+J:\sem5\stable_v0\authwebpart\bin\EntityFramework.SqlServer.xml
+J:\sem5\stable_v0\authwebpart\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+J:\sem5\stable_v0\authwebpart\obj\Release\stable_v0.csproj.CoreCompileInputs.cache
+J:\sem5\stable_v0\authwebpart\obj\Release\authwebpart.dll
+J:\sem5\stable_v0\authwebpart\obj\Release\authwebpart.pdb

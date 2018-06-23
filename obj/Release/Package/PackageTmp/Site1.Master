@@ -1,0 +1,198 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="authwebpart.Site1" %>
+
+<!DOCTYPE html>
+<html>
+    <head runat="server">
+    <title>MLM 1.0 Smart way of lending</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+               
+        
+    <script src="Scripts/jquery.js"></script>
+    <script src="Scripts/jquery-ui.min.js"></script>
+    <link href="Styles/jquery-ui.min.css" rel="stylesheet" />
+    <link href="Styles/jquery-ui.structure.min.css" rel="stylesheet" />
+    <link href="Styles/jquery-ui.theme.min.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="img/favicon.png">
+        
+        
+        <!--invoice-->
+  
+  
+   
+
+    <!-- Icons -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Main styles for this application -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Calculator style -->
+    <link href="css/calculator-style.css" rel="stylesheet" />
+
+    <!-- Custom style -->
+    <link href="css/custom.css" rel="stylesheet" />
+
+    <!-- Date picker -->
+    <link href="css/datepicker/bootstrap-datepicker3.css" rel="stylesheet" />
+
+    <script type="text/javascript" lang="javascript">
+        $(function () {
+            $('#searchID_TextBox1').autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: "customerserv.asmx/GetCustomerNames",
+                        data: "{ 'scust': '" + request.term + "' }",
+                        type: "POST",
+                        dataType: "json",
+                        contentType: "application/json;charset=utf-8",
+                        success: function (result) {
+                            response(result.d);
+                        },
+                        error: function (result) {
+                            alert('There is a problem processing your request');
+                        }
+                    });
+                }
+
+            });
+        });
+    </script>
+              
+    </head>
+    <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+        <form id="form1" runat="server">
+                
+            <header class="app-header navbar">
+                <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">☰</button>
+                <a class="navbar-brand" href="/dashboard.aspx"></a>
+                <button class="navbar-toggler sidebar-minimizer d-md-down-none" type="button">☰</button>
+
+                <ul class="nav navbar-nav d-md-down-none">
+                    <li class="nav-item px-3">
+                        <a class="nav-link" href="#">Dashboard</a>
+                    </li>
+                    
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-link mr-4" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            <img src="img/avatars/user.png" class="img-avatar" alt="Admin">
+                            <span class="d-md-down-none"><asp:Label runat="server" ID="userlbl" Text=""></asp:Label></span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="dropdown-header text-center">
+                                <strong>Account</strong>
+                            </div>
+                            <asp:LinkButton ID="LinkButton9" runat="server" PostBackUrl="~/customer.aspx" CssClass="dropdown-item"><i class="icon-wallet"></i> Create account</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton10" runat="server" PostBackUrl="~/cust_list.aspx" CssClass="dropdown-item"><i class="fa fa-tasks"></i> List accounts</asp:LinkButton>
+                            <asp:LinkButton ID="LinkButton11" runat="server" PostBackUrl="~/search.aspx" CssClass="dropdown-item"><i class="fa fa-comments"></i> Search account</asp:LinkButton>
+                             <asp:LinkButton ID="billbtn" CssClass="dropdown-item" runat="server" PostBackUrl="~/invoice.aspx" ><i class="icon-book-open"></i>Genrate Bill</asp:LinkButton>
+                            
+                            <asp:LinkButton ID="logoutbtn" OnClick="logout_click" CssClass="dropdown-item" runat="server"><i class="fa fa-lock"></i> Logout</asp:LinkButton>
+                          
+                        </div>
+                    </li>
+                </ul>
+            </header>
+
+            <div class="app-body">
+                <div class="sidebar">
+                    <nav class="sidebar-nav">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <asp:LinkButton ID="LinkButton6" runat="server" PostBackUrl="~/dashboard.aspx" CssClass="nav-link"><i class="icon-speedometer"></i> Dashboard </asp:LinkButton>
+                            </li>
+                            <li class="nav-title">
+                                Actions
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/customer.aspx" CssClass="nav-link"><i class="icon-wallet"></i> Create account</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/cust_list.aspx" CssClass="nav-link"><i class="icon-folder-alt"></i> List accounts</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/search.aspx" CssClass="nav-link"><i class="icon-bubble"></i> Search account</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/search_datewise.aspx" CssClass="nav-link"><i class="icon-calendar"></i> Search between date</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/closed_acc.aspx" CssClass="nav-link"><i class="icon-target"></i> Closed account</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="LinkButton12" runat="server" PostBackUrl="~/invoice.aspx" CssClass="nav-link"><i class="icon-book-open"></i>Genrate GST Invoice</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="LinkButton7" Visible="false" runat="server" PostBackUrl="~/verify_user.aspx" CssClass="nav-link"><i class="icon-user-following"></i> Pending Requests</asp:LinkButton>
+                            </li>
+                            <li class="nav-item">
+                                <asp:LinkButton ID="LinkButton8" Visible="false" runat="server" PostBackUrl="~/approved.aspx" CssClass="nav-link"><i class="icon-people"></i> User List</asp:LinkButton>
+                            </li>
+
+                            <li class="divider"></li>
+
+                            <li class="nav-item">
+                                <asp:LinkButton ID="logoutsecondary" OnClick="logout_click" runat="server" CssClass="nav-link"><i class="icon-calculator"></i> Logout</asp:LinkButton>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Main content -->
+                <main class="main">
+                    <asp:ContentPlaceHolder ID="dashboardID" runat="server"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="createAccID" runat="server"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="searchID" runat="server"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="viewAccID" runat="server"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="searchDateID" runat="server"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="custListID" runat="server"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="verify_userID" runat="server"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="approvalID" runat="server"></asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="closed_accID" runat="server"></asp:ContentPlaceHolder>
+                  <asp:ContentPlaceHolder ID="invoiceID" runat="server"></asp:ContentPlaceHolder>
+
+                </main>
+            </div>
+
+            <footer class="app-footer">
+              <!--  <a href="http://MLM.io">MLM</a> © 2017 MLM.
+                <span class="float-right">Powered by <a href="http://MLM.io">MLM</a>
+                </span>-->
+            </footer>
+        </form>
+    
+        <!-- Bootstrap and necessary plugins -->
+
+        <script src="js/libs/index.js"></script>
+        <script src="js/libs/bootstrap.min.js"></script>
+        <script src="js/libs/pace.min.js"></script>
+        
+        <!-- GenesisUI main scripts -->
+        <script src="js/app.js"></script>
+        
+        <!-- Calculator style -->
+        <script src="js/knockout-2.1.0.js"></script>
+        <script src="js/calculator.js"></script>
+
+        <!-- Datepicker -->
+        <script src="js/datepicker/bootstrap-datepicker.min.js"></script>
+
+        <script>
+            $('.datepicker input').datepicker({
+                format: "dd/mm/yyyy",
+                
+                weekStart: 1,
+                autoclose: true,
+                todayHighlight: true
+            });
+
+        </script>
+
+    </body>
+</html>
