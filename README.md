@@ -21,4 +21,4 @@
 5.Run application
 
 ## Customer View
-![screenshot-docs google com-2022 02 04-20_00_43](https://user-images.githubusercontent.com/25721103/152546464-8448bebf-e87f-49aa-834d-07add9f6cdfe.png)
+![2022-02-04_20-09](https://user-images.githubusercontent.com/25721103/152547715-10adee2d-bdd1-453c-a4db-2b128c99ea9d.png)
