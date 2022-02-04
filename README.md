@@ -20,9 +20,25 @@
 
 5.Run application
 
-## Customer View
+# Application Views
+
+### Customer Dashboard
+![image](https://user-images.githubusercontent.com/25721103/152548777-889a1744-a452-49f9-adc7-ca3b97473edf.png)
+
+### Customer Actions
 ![2022-02-04_20-09](https://user-images.githubusercontent.com/25721103/152547715-10adee2d-bdd1-453c-a4db-2b128c99ea9d.png)
 
-## Customer Details|Mortgage Entries|Past transections|Credit-Debit Amount
- 
-![image](https://user-images.githubusercontent.com/25721103/152548206-58f7db55-72fb-4334-bfc3-356c65a95447.png)
+### Single Page: Customer Details | Mortgage Entries | Past transections | Credit-Debit Amount
+![image](https://user-images.githubusercontent.com/25721103/152548515-e0218aff-772a-44f8-85f5-8241abd27fac.png)
+![image](https://user-images.githubusercontent.com/25721103/152548542-e26430fb-fd2b-4852-9122-e645cc0c070d.png)
+![image](https://user-images.githubusercontent.com/25721103/152548561-007dc937-7a30-4df9-8aab-15a20c3b0815.png)
+![image](https://user-images.githubusercontent.com/25721103/152548589-e7a82509-17d9-4230-ab16-e7488a4065ca.png)
+![image](https://user-images.githubusercontent.com/25721103/152548621-ec9a3703-dfe0-49de-8f9d-02cacb63bb99.png)
+
+### Register/Login
+
+![image](https://user-images.githubusercontent.com/25721103/152549499-143e8a4c-6458-4d28-9df6-4dca5cbe00ea.png) ![image](https://user-images.githubusercontent.com/25721103/152549535-96b9cda6-5448-4575-9f24-51a228b3696b.png)
+
+
+
+
