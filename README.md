@@ -2,10 +2,15 @@
 
 ## Major Features
 1.Facility of add /edit/delete customer account  to user.
+
 2.Manages  customer accounts  with mortgage details.
+
 3.Get resultant mortgage amount with interest rate calculation.
+
 4.Dashboard which show recently created/closed customer account , total mortgage  ,credit and debit amount which help user for better estimation of business.
+
 5.Print GST INVOICE for customers.
+
 6.Admin functionality to manage customers.
 
 ## Steps to Run
