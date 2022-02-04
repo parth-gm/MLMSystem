@@ -1,4 +1,4 @@
-# money_lending_managment_system
+# Money Lending Managment System
 
 ## Major Features
 1.Facility of add /edit/delete customer account  to user.
