@@ -22,3 +22,7 @@
 
 ## Customer View
 ![2022-02-04_20-09](https://user-images.githubusercontent.com/25721103/152547715-10adee2d-bdd1-453c-a4db-2b128c99ea9d.png)
+
+## Customer Details|Mortgage Entries|Past transections|Credit-Debit Amount
+ 
+![image](https://user-images.githubusercontent.com/25721103/152548206-58f7db55-72fb-4334-bfc3-356c65a95447.png)
