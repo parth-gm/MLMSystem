@@ -15,7 +15,8 @@ This Project build for Money Lenders considering requiremnts for their bussiness
 
 6. Admin functionality to manage customers.
 
-#### [Check out MLM System Low Level Design](https://github.com/parth-np/MLM_Docs)
+## Low Level Design
+Check out [MLM System Low Level Design](https://github.com/parth-np/MLM_Docs)
 
 ## Steps to Run
 
