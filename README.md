@@ -33,7 +33,7 @@ Check out [MLM System Low Level Design](https://github.com/parth-np/MLM_Docs)
 For More detail check out [MLM System Presentation](https://docs.google.com/presentation/d/1G0j-eLCcpLxe6EjxcIM7J2vWHdtOdhOTfmnqN8kkSb4/edit?usp=sharing)
 
 
-# Application Views
+## Application Views
 
 ### Customer Dashboard
 ![image](https://user-images.githubusercontent.com/25721103/152548777-889a1744-a452-49f9-adc7-ca3b97473edf.png)
