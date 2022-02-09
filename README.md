@@ -1,29 +1,36 @@
 # Money Lending Managment System
 
+This Project build for Money Lenders considering requiremnts for their bussiness which includes efficient management of customer in digital way, Which would otherwise have to record manually on hardcopy, stock management for mortgage items, Realtime Interest calculation and GST Invoice.
+
 ## Major Features
-1.Facility of add /edit/delete customer account  to user.
+1. Facility of add /edit/delete customer account  to user.
 
-2.Manages  customer accounts  with mortgage details.
+2. Manages  customer accounts  with mortgage details.
 
-3.Get resultant mortgage amount with interest rate calculation.
+3. Get resultant mortgage amount with interest rate calculation.
 
-4.Dashboard which show recently created/closed customer account , total mortgage  ,credit and debit amount which help user for better estimation of business.
+4. Dashboard which show recently created/closed customer account , total mortgage  ,credit and debit amount which help user for better estimation of business.
 
-5.Print GST INVOICE for customers.
+5. Print GST INVOICE for customers.
 
-6.Admin functionality to manage customers.
+6. Admin functionality to manage customers.
+
+#### [Check out MLM System Low Level Design](https://github.com/parth-np/MLM_Docs)
 
 ## Steps to Run
 
-1.In Visual studio, create asp.net web-app in visual studio
+1. In Visual studio, create asp.net web-app in visual studio
 
-2.Import above file structure.
+2. Import above file structure.
 
-3.Create database and import .mdf file.
+3. Create database and import .mdf file.
 
-4.Change connectionstring in web.config.
+4. Change connectionstring in web.config.
 
-5.Run application
+5. Run application
+
+For More detail check out [MLM System Presentation](https://docs.google.com/presentation/d/1G0j-eLCcpLxe6EjxcIM7J2vWHdtOdhOTfmnqN8kkSb4/edit?usp=sharing)
+
 
 # Application Views
 
@@ -43,7 +50,5 @@
 ### Register/Login
 
 ![image](https://user-images.githubusercontent.com/25721103/152549499-143e8a4c-6458-4d28-9df6-4dca5cbe00ea.png) ![image](https://user-images.githubusercontent.com/25721103/152549535-96b9cda6-5448-4575-9f24-51a228b3696b.png)
-
-
 
 
